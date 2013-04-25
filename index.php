@@ -1,15 +1,38 @@
 <?php
+global $theme, $wp_query;
 get_header();
 $meta = $theme->metaToData($post->ID);
-$fullpage = !empty($meta['hide_widgets']) && !empty($meta['hide_submenu']);
 ?>
 		<header id="content-title">
-			<h1><?php wp_title(false); ?></h1>
+			<h1><?php
+			if (is_front_page()) {
+				echo $post->post_title;
+			} else {
+				wp_title(false);
+			}
+			?></h1>
 		</header>
 		<?php
-		get_sidebar();
+		$isFrontPage = false;
+		if (is_front_page()) {
+			$isFrontPage = true;
+			$originalQuery = clone $wp_query;
+			query_posts(array(
+				'post_type' => 'post',
+				'post_count' => get_option('posts_per_page')
+			));
+		}
 		?>
-		<section id="content" role="main" <?php if ($fullpage) { echo 'class="full"'; }?>>
+		<section id="content" role="main">
+
+			<?php if (is_single($post->ID) || is_front_page()): ?>
+				<?php if (has_post_thumbnail($post->ID)): ?>
+				<div class="entry-image">
+					<?php echo get_the_post_thumbnail($post->ID, 'full'); ?>
+				</div>
+				<?php endif; ?>
+			<?php endif; ?>
+
 			<?php if (have_posts()):
 
 				while (have_posts()) {
@@ -36,14 +59,17 @@ $fullpage = !empty($meta['hide_widgets']) && !empty($meta['hide_submenu']);
 			<?php endif; ?>
 
 		</section>
-
-		<?php if (empty($meta['hide_widgets'])): ?>
+		<?php
+		if ($isFrontPage) {
+			// reset
+			$wp_query = clone $originalQuery;
+		}
+		?>
 		<section id="sidebar" role="complementary" class="clearfix">
 			<?php
-			dynamic_sidebar('sidebar-subnav');
+			$frontpage = is_front_page() ? '-frontpage' : null;
+			dynamic_sidebar('sidebar'.$frontpage);
 			?>
 		</section>
-		<?php endif; ?>
-
 <?php
 get_footer();
