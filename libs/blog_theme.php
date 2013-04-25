@@ -2,6 +2,28 @@
 
 class BlogTheme extends RockharborThemeBase {
 
+	public function registerSidebars() {
+		unregister_sidebar('sidebar-nav');
+		register_sidebar(array(
+			'name' => __('Front Page Widgets', 'rockharbor'),
+			'id' => 'sidebar-frontpage',
+			'description' => __('Widgets that appear on the homepage.', 'rockharbor'),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => "</div></aside>",
+			'before_title' => '<header><h1>',
+			'after_title' => '</h1></header><div class="widget-body">',
+		));
+		register_sidebar(array(
+			'name' => __('Widgets', 'rockharbor'),
+			'id' => 'sidebar',
+			'description' => __('Widgets that appear on other pages.', 'rockharbor'),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => "</div></aside>",
+			'before_title' => '<header><h1>',
+			'after_title' => '</h1></header><div class="widget-body">',
+		));
+	}
+
 	public function after() {
 		parent::after();
 		unregister_nav_menu('footer');
