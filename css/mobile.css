@@ -1,0 +1,89 @@
+@media screen and (max-width: 569px) {
+
+/*= Generic styles
+-----------------------------------------*/
+.mobile-hide,
+.tablet-hide,
+.desktop-hide {
+	display: inherit !important;
+}
+
+.mobile-hide {
+	display: none !important;
+}
+
+/*= Main layout
+-----------------------------------------*/
+#page {
+	width: 100%;
+}
+
+#submenu {
+	padding-top: 15px;
+}
+
+#submenu ul {
+	float: none;
+}
+
+aside {
+	float: none;
+}
+
+.page-title,
+#content-title,
+section header {
+	padding: 0 0 10px 0;
+}
+
+#footer > div {
+	width: 100%;
+	display: none;
+}
+
+#footer .first {
+	display: block;
+}
+
+/*= Main navigation
+-----------------------------------------*/
+#access {
+	display: none;
+}
+
+#access ul li {
+	float: none;
+}
+
+#access ul li a {
+	text-align: left;
+}
+
+/*= Articles
+-----------------------------------------*/
+time {
+	float: none;
+	display: block;
+	margin-top: 5px;
+}
+
+/*= Story box
+-----------------------------------------*/
+.stories-2 .story-box,
+.stories-3 .story-box,
+.stories-3 .story-box {
+	overflow: visible;
+	float: none;
+	width: 70%;
+	margin-bottom: 10px;
+}
+
+.story-box .title {
+	left: 50%;
+	bottom: 50%;
+	margin: 0;
+	margin-bottom: -1em;
+	width: 85%; /*= (story-box width)* left + 50% */
+}
+
+}
