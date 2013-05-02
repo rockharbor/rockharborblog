@@ -40,7 +40,6 @@ class BlogTheme extends RockharborThemeBase {
 		wp_register_script('mediaCheck', "$base/js/mediaCheck.min.js");
 		wp_register_script('initScripts', "$base/js/scripts.js");
 		wp_register_script('fastclick', "$base/js/fastclick.js");
-		wp_register_script('touch', "$base/js/touch.js");
 		wp_register_style('reset', "$base/css/reset.css");
 		wp_register_style('fonts', "$base/css/fonts.css");
 		wp_register_style('lightbox', "$base/css/lightbox.css");
@@ -51,6 +50,7 @@ class BlogTheme extends RockharborThemeBase {
 		wp_register_style('mobile', "$base/css/mobile.css");
 		wp_register_style('tablet', "$base/css/tablet.css");
 		wp_register_style('base', "$base/style.css");
+		wp_register_script('touch', "$base/js/touch.js");
 
 		// queue them
 		wp_enqueue_style('reset');

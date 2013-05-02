@@ -52,53 +52,91 @@
 
 	<div id="page" class="hfeed clearfix">
 
-		<nav id="access" role="navigation" class="clearfix">
-			<?php
-			$locations = get_nav_menu_locations();
-			$menu_items = wp_get_nav_menu_items($locations['main'], array('auto_show_children' => true));
-			_wp_menu_item_classes_by_context($menu_items);
-			$menu = array();
-			$ids = array();
-			foreach ($menu_items as $key => $menu_item) {
-				$a = $theme->Html->tag('a', $menu_item->title, array('href' => $menu_item->url));
-				$opts = array(
-					'class' => implode(' ', $menu_item->classes)
-				);
-				if ($menu_item->menu_item_parent == 0) {
-					// top level
-					$menu[] = array(
-						'a' => $a,
-						'opts' => $opts,
-						'children' => array()
-					);
-					$ids[$menu_item->ID] = count($menu)-1;
-				} else {
-					// child
-					$menu[$ids[$menu_item->menu_item_parent]]['children'][] = $theme->Html->tag('li', $a, $opts);
-				}
-			}
-			$output = '';
-			$max_row = 5;
-			foreach ($menu as $key => $top_level_menu_item) {
-				$children = null;
-				if (!empty($top_level_menu_item['children'])) {
-					$class = null;
-					if (count($top_level_menu_item['children']) > $max_row) {
-						$top_level_menu_item['children'] = array_chunk($top_level_menu_item['children'], $max_row);
-						foreach ($top_level_menu_item['children'] as $col) {
-							$children .= $theme->Html->tag('ul', implode('', $col));
+		<section class="main-navigation clearfix">
+
+			<div class="branding">
+				<h1 class="clearfix">
+					<a href="/">
+						<?php
+						echo '<div class="logo">';
+						echo $theme->Html->image('logo.png', array(
+							'alt' => 'RH',
+							'parent' => false
+						));
+						echo $theme->Html->tag('span', $theme->info('short_name'), array(
+							'class' => 'title desktop-hide tablet-hide'
+						));
+						echo $theme->Html->image('textlogo-white.png', array(
+							'alt' => 'ROCKHARBOR',
+							'class' => 'mobile-hide',
+							'parent' => true
+						));
+						echo '</div>';
+						echo '<div class="title mobile-hide">';
+						if (!$theme->info('hide_name_in_global_nav')) {
+							echo $theme->Html->tag('span', $theme->info('name'));
 						}
-						$class = 'cols'.count($top_level_menu_item['children']);
+						echo '</div>';
+						?>
+					</a>
+				</h1>
+			</div>
+
+			<div class="desktop-hide tablet-hide mobile-menu">
+				<ul class="clearfix">
+					<li class="menu"></li>
+				</ul>
+			</div>
+
+			<nav class="access clearfix" role="navigation">
+				<?php
+				$locations = get_nav_menu_locations();
+				$menu_items = wp_get_nav_menu_items($locations['main'], array('auto_show_children' => true));
+				_wp_menu_item_classes_by_context($menu_items);
+				$menu = array();
+				$ids = array();
+				foreach ($menu_items as $key => $menu_item) {
+					$a = $theme->Html->tag('a', $menu_item->title, array('href' => $menu_item->url));
+					$opts = array(
+						'class' => implode(' ', $menu_item->classes)
+					);
+					if ($menu_item->menu_item_parent == 0) {
+						// top level
+						$menu[] = array(
+							'a' => $a,
+							'opts' => $opts,
+							'children' => array()
+						);
+						$ids[$menu_item->ID] = count($menu)-1;
 					} else {
-						$children = $theme->Html->tag('ul', implode('', $top_level_menu_item['children']));
+						// child
+						$menu[$ids[$menu_item->menu_item_parent]]['children'][] = $theme->Html->tag('li', $a, $opts);
 					}
-					$children = $theme->Html->tag('div', $children, array('class' => 'submenu '.$class));
 				}
-				$output .= $theme->Html->tag('li', $top_level_menu_item['a'].$children, $top_level_menu_item['opts']);
-			}
-			echo $theme->Html->tag('ul', $output, array('class' => 'menu clearfix'));
-			?>
-		</nav>
+				$output = '';
+				$max_row = 5;
+				foreach ($menu as $key => $top_level_menu_item) {
+					$children = null;
+					if (!empty($top_level_menu_item['children'])) {
+						$class = null;
+						if (count($top_level_menu_item['children']) > $max_row) {
+							$top_level_menu_item['children'] = array_chunk($top_level_menu_item['children'], $max_row);
+							foreach ($top_level_menu_item['children'] as $col) {
+								$children .= $theme->Html->tag('ul', implode('', $col));
+							}
+							$class = 'cols'.count($top_level_menu_item['children']);
+						} else {
+							$children = $theme->Html->tag('ul', implode('', $top_level_menu_item['children']));
+						}
+						$children = $theme->Html->tag('div', $children, array('class' => 'submenu '.$class));
+					}
+					$output .= $theme->Html->tag('li', $top_level_menu_item['a'].$children, $top_level_menu_item['opts']);
+				}
+				echo $theme->Html->tag('ul', $output, array('class' => 'menu clearfix'));
+				?>
+			</nav>
+
+		</section>
 
 		<?php
 		if (isset($_SESSION['message'])) {

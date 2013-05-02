@@ -47,15 +47,45 @@ section header {
 
 /*= Main navigation
 -----------------------------------------*/
-#access {
+.main-navigation {
+	height: auto;
+}
+
+.main-navigation .mobile-menu {
+	float: right;
+}
+
+.main-navigation .access {
+	display: none;
+	float: none;
+	clear: both;
+}
+
+.main-navigation .branding h1 .title {
+	margin-left: 10px;
+}
+
+.main-navigation .mobile-menu .menu {
+	margin-top: 5px;
+	margin-right: 5px;
+	height: 30px;
+	width: 30px;
+
+	background-image: url('images/sprite.png');
+	background-repeat: no-repeat;
+
+	background-position: -19px -60px;
+}
+
+.main-navigation .access>ul>li:hover:after {
 	display: none;
 }
 
-#access ul li {
+.main-navigation .access ul li {
 	float: none;
 }
 
-#access ul li a {
+.main-navigation .access ul li a {
 	text-align: left;
 }
 

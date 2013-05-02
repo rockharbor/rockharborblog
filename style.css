@@ -238,48 +238,99 @@ th {
 
 /*= Main navigation
 -----------------------------------------*/
-#access {
+.main-navigation {
+	height: 40px;
+
+	background: #383838;
+}
+
+.main-navigation .branding {
+	float: left;
+	height: 40px;
+}
+
+.main-navigation .access {
+	float: right;
+	display: block;
+}
+
+.main-navigation .branding h1 {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	height: 40px;
+
+	border: none;
+
+	font-size: 2.4em; /*= 24px */
+	line-height: 40px;
+}
+
+.main-navigation .branding h1 .title {
+	display: inline-block;
+	float: right;
+	padding: 0 10px;
+	height: 40px;
+
+	background: #ccc;
+
+	color: #383838
+}
+
+.main-navigation .branding .logo {
+	display: inline-block;
+	padding: 0 10px;
+}
+
+.main-navigation .branding h1 a {
+	display: inline-block;
+	height: 100%;
+
+	color: #383838;
+}
+
+.main-navigation .access {
 	z-index: 100;
-	margin-top: 10px;
+	float: right;
 
 	font-family: 'TradeGothicLTStdBdCnNo.20', Lucida, Helvetica, Arial, sans-serif;
 	text-transform: uppercase;
 }
 
-#access ul {
+.main-navigation .access ul {
 	z-index: 100;
 
 	background: #383838;
 }
 
-#access ul li {
+.main-navigation .access ul li {
 	float: left;
 	position: relative;
 	z-index: 100;
 }
 
-#access ul li a {
+.main-navigation .access ul li a {
 	display: block;
-	padding: 5px 20px 4px 20px;
+	padding: 7px 20px 7px 20px;
 
 	color: #fff;
 	font-size: 2.6em; /*= 26px */
 	text-decoration: none;
 	text-align: center;
-
-	border-bottom: 2px solid transparent;
 }
 
-#access li a.touch,
-#access li a:hover,
-#access li.current-menu-item > a {
-	background: #ff0000;
+.main-navigation .access li a.touch,
+.main-navigation .access li a:hover,
+.main-navigation .access li.current-menu-item > a {
+	background: #ccc;
+	color: #383838;
 }
 
-#access ul li div.submenu {
+.main-navigation .access ul li div.submenu {
 	display: none;
 	position: absolute;
 	top: 100%;
+	right: 0;
 	z-index: 100;
 	width: 120px;
 	box-shadow: 0px 0px 3px 0px #888888;
@@ -287,7 +338,7 @@ th {
 	background: #fff;
 }
 
-#access>ul>li:hover:after {
+.main-navigation .access>ul>li:hover:after {
 	border: 8px solid transparent;
 	border-bottom: 8px solid #ffffff;
 	content: '';
@@ -298,45 +349,45 @@ th {
 	z-index: 100;
 }
 
-#access ul li div.submenu {
+.main-navigation .access ul li div.submenu {
 	width: 200px;
 	padding: 5px;
 }
 
-#access ul li div.submenu ul {
+.main-navigation .access ul li div.submenu ul {
 	width: 100%;
 	float: left;
 
 	background: transparent;
 }
 
-#access ul li div.submenu.cols2 {
+.main-navigation .access ul li div.submenu.cols2 {
 	width: 400px;
 }
 
-#access ul li div.submenu.cols2 ul {
+.main-navigation .access ul li div.submenu.cols2 ul {
 	width: 49.5%;
 	margin-right: 1%;
 }
 
-#access ul li div.submenu.cols2 ul:nth-child(2n+2) {
+.main-navigation .access ul li div.submenu.cols2 ul:nth-child(2n+2) {
 	margin-right: 0;
 }
 
-#access ul li div.submenu.cols3 {
+.main-navigation .access ul li div.submenu.cols3 {
 	width: 600px;
 }
 
-#access ul li div.submenu.cols3 ul {
+.main-navigation .access ul li div.submenu.cols3 ul {
 	width: 32.66%;
 	margin-right: 1%;
 }
 
-#access ul li div.submenu.cols3 ul:nth-child(3n+3) {
+.main-navigation .access ul li div.submenu.cols3 ul:nth-child(3n+3) {
 	margin-right: 0;
 }
 
-#access ul li ul li a {
+.main-navigation .access ul li ul li a {
 	clear: both;
 	display: block;
 	padding: 5px;
@@ -349,20 +400,20 @@ th {
 	color: #383838;
 }
 
-#access ul li ul li {
+.main-navigation .access ul li ul li {
 	display: block;
 	float: none;
 }
 
-#access ul li:hover div.submenu {
+.main-navigation .access ul li:hover div.submenu {
 	display: block;
 }
 
-#access ul li ul li a:hover,
-#access ul li ul li.current-menu-item a {
-	background: #ff0000;
+.main-navigation .access ul li ul li a:hover,
+.main-navigation .access ul li ul li.current-menu-item a {
+	background: #ccc;
 
-	color: #ffffff;
+	color: #383838;
 }
 
 /*= Main layout
@@ -371,23 +422,6 @@ th {
 	margin-top: 10px;
 
 	background: #ffffff;
-}
-
-#branding {
-	padding: 10px;
-	background: #fff;
-}
-
-#branding > div {
-	margin-top: 10px;
-}
-
-#branding > div:first-of-type {
-	margin-top: 0;
-}
-
-#branding img {
-	display: block;
 }
 
 #sidebar,
