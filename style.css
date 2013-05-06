@@ -465,7 +465,6 @@ section header time {
 section header h1,
 aside header h1 {
 	display: block;
-	padding-left: 10px;
 
 	border: none;
 
@@ -477,10 +476,6 @@ aside header h1 {
 
 aside header h1 {
 	font-size: 1.8em; /*= 18px */
-}
-
-section article {
-	padding: 20px;
 }
 
 section article:first-of-type {
@@ -497,10 +492,10 @@ section article:last-of-type {
 }
 
 aside {
-	width: 100%;
 	position: relative;
 	float: left;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	margin-left: 20px;
 
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;

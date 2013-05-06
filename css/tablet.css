@@ -14,8 +14,13 @@
 
 /*= Main layout
 -----------------------------------------*/
+#main {
+	padding: 20px;
+	padding-top: 0;
+}
+
 #page {
-	width: 98%;
+	width: 100%;
 }
 
 #sidebar,
@@ -59,6 +64,10 @@ aside header h1 {
 section header time {
 	float: none;
 	margin-left: 10px;
+}
+
+section article:last-of-type {
+	border-bottom: 1px solid #747474;
 }
 
 #submenu {
