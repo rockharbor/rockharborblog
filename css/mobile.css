@@ -98,14 +98,6 @@ section header {
 	text-align: left;
 }
 
-/*= Articles
------------------------------------------*/
-time {
-	float: none;
-	display: block;
-	margin-top: 5px;
-}
-
 /*= Story box
 -----------------------------------------*/
 .stories-2 .story-box,

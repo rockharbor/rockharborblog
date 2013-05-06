@@ -16,18 +16,19 @@
 		<?php if (!is_single() || is_search()): ?>
 		<h2>
 			<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink to %s', 'rockharbor'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
+		</h2>
+		<?php endif; ?>
+
+		<div class="entry-meta clearfix">
 			<?php
 			$theme->set('pubdate', true);
 			$theme->set('date', $post->post_date);
 			echo $theme->render('posted_date');
 			?>
-		</h2>
-		<?php endif; ?>
-
-		<div class="entry-meta">
+			<span class="author">By: <?php echo get_the_author_link(); ?></span>
 			<span class="tags">Posted in <?php the_category(', ') . the_tags(' | ', ', '); ?></span>
 			<?php if (!is_single() || is_search()): ?>
-			<span class="comments-link"> | <?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rockharbor') . '</span>', __('<b>1</b> Reply', 'rockharbor'), __('<b>%</b> Replies', 'rockharbor')) ?></span>
+			<span class="comments-link"><?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rockharbor') . '</span>', __('<b>1</b> Reply', 'rockharbor'), __('<b>%</b> Replies', 'rockharbor')) ?></span>
 			<?php endif; ?>
 		</div>
 
