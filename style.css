@@ -27,12 +27,12 @@ embed {
 
 /* see: http://clagnut.com/blog/348/ */
 body {
+	padding-top: 20px;
+
 	font-size: 62.5%; /*= reset browser to 10px */
 	font-family: 'Lucida Sans', Helvetica, Arial, sans-serif;
 	color: #383838;
 	text-align: center;
-
-	background: #e8e8e8;
 }
 
 #page,
@@ -58,7 +58,7 @@ hr {
 	margin: 10px 0;
 
 	border: none;
-	border-bottom: 1px dotted #c9c9c9;
+	border-bottom: 1px solid #747474;
 }
 
 p {
@@ -107,7 +107,7 @@ h1 {
 	font-size: 2.4em; /*= 24px */
 	color: #383838;
 
-	border-bottom: 1px solid #383838;
+	border-bottom: 1px solid #747474;
 }
 
 h2 {
@@ -162,7 +162,7 @@ blockquote {
 }
 
 abbr {
-	border-bottom: 1px dotted #c9c9c9;
+	border-bottom: 1px solid #747474;
 }
 
 code,
@@ -239,6 +239,7 @@ th {
 /*= Main navigation
 -----------------------------------------*/
 .main-navigation {
+	margin-bottom: 20px;
 	height: 40px;
 
 	background: #383838;
@@ -426,7 +427,7 @@ th {
 
 #sidebar,
 #content {
-	float: right;
+	float: left;
 	width: 75%;
 
 	background: #ffffff;
@@ -443,7 +444,7 @@ th {
 
 #submenu,
 #sidebar {
-	float: left;
+	float: right;
 	width: 25%;
 }
 
@@ -516,7 +517,7 @@ aside .widget-body {
 article {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
-	border-bottom: 1px dotted #747474;
+	border-bottom: 1px solid #747474;
 }
 
 /*= Main content
@@ -790,7 +791,7 @@ h2 time span {
 article footer {
 	padding-top: 10px;
 
-	border-top: 1px dotted #747474;
+	border-top: 1px solid #747474;
 
 	background: transparent;
 }
