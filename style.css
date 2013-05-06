@@ -238,7 +238,6 @@ th {
 /*= Main navigation
 -----------------------------------------*/
 .main-navigation {
-	margin-bottom: 20px;
 	height: 40px;
 
 	background: #383838;
@@ -419,7 +418,7 @@ th {
 /*= Main layout
 -----------------------------------------*/
 #main {
-	padding-top: 10px;
+	padding-top: 20px;
 
 	background: #ffffff;
 }
@@ -441,10 +440,13 @@ th {
 	width: 100%;
 }
 
-#submenu,
 #sidebar {
 	float: right;
 	width: 25%;
+}
+
+#submenu {
+	display: none;
 }
 
 .page-title h1,

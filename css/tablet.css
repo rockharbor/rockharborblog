@@ -16,7 +16,6 @@
 -----------------------------------------*/
 #main {
 	padding: 20px;
-	padding-top: 0;
 }
 
 #page {
@@ -27,16 +26,6 @@
 #content {
 	width: 100%;
 	float: none;
-}
-
-#content {
-	margin-top: 10px;
-}
-
-#main {
-	padding-top: 10px;
-
-	box-shadow: none;
 }
 
 #footer .column {
@@ -71,19 +60,25 @@ section article:last-of-type {
 }
 
 #submenu {
-	float: none;
-	width: 98%;
-	padding: 1%;
+	display: block;
+
+	width: 100%;
 	background: #383838;
 }
 
 #submenu ul {
+	padding: 10px 20px;
 	/* reverts columns to use element definition */
 	width: auto !important;
 }
 
+#submenu li {
+	margin-bottom: 10px;
+}
+
 #submenu a {
 	color: #ffffff;
+	text-decoration: none;
 }
 
 /*= Main navigation

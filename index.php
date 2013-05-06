@@ -1,24 +1,18 @@
 <?php
-global $theme, $wp_query;
+global $theme, $wp_query, $frontpage;
 get_header();
 $meta = $theme->metaToData($post->ID);
+$isFrontpage = true;
+if (!isset($frontpage) || empty($frontpage)) {
+	$isFrontpage = false;
+}
 ?>
-		<?php if (!is_front_page()): ?>
+		<?php if (!$isFrontpage): ?>
 		<header id="content-title">
 			<h1><?php wp_title(false); ?></h1>
 		</header>
 		<?php endif; ?>
-		<?php
-		$isFrontPage = false;
-		if (is_front_page()) {
-			$isFrontPage = true;
-			$originalQuery = clone $wp_query;
-			query_posts(array(
-				'post_type' => 'post',
-				'post_count' => get_option('posts_per_page')
-			));
-		}
-		?>
+
 		<section id="content" role="main">
 
 			<?php if (is_single($post->ID) || is_front_page()): ?>
@@ -55,16 +49,10 @@ $meta = $theme->metaToData($post->ID);
 			<?php endif; ?>
 
 		</section>
-		<?php
-		if ($isFrontPage) {
-			// reset
-			$wp_query = clone $originalQuery;
-		}
-		?>
+
 		<section id="sidebar" role="complementary" class="clearfix">
 			<?php
-			$frontpage = is_front_page() ? '-frontpage' : null;
-			dynamic_sidebar('sidebar'.$frontpage);
+			dynamic_sidebar('sidebar' . ($isFrontpage ? '-frontpage' : null));
 			?>
 		</section>
 <?php
