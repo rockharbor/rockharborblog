@@ -45,11 +45,9 @@
 			if (comments_open()) {
 				// have to capture because wordpress just auto-echoes everything
 				ob_start();
-				?>
-
-				<?php comments_template('', true); ?>
-				<?php
+				comments_template('', true);
 				$comments = ob_get_clean();
+				$comments = trim(preg_replace('/\s+/', ' ', $comments));
 			}
 			if (!empty($related) || !empty($comments)) {
 				echo $theme->Html->tag('footer', $related.$comments, array('class' => 'related clearfix'));
