@@ -3,15 +3,11 @@ global $theme, $wp_query;
 get_header();
 $meta = $theme->metaToData($post->ID);
 ?>
+		<?php if (!is_front_page()): ?>
 		<header id="content-title">
-			<h1><?php
-			if (is_front_page()) {
-				echo $post->post_title;
-			} else {
-				wp_title(false);
-			}
-			?></h1>
+			<h1><?php wp_title(false); ?></h1>
 		</header>
+		<?php endif; ?>
 		<?php
 		$isFrontPage = false;
 		if (is_front_page()) {
