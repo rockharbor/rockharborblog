@@ -12,13 +12,6 @@
 		</h2>
 		<?php endif; ?>
 
-		<div class="entry-meta">
-			<span class="tags">Posted in <?php the_category(', ') . the_tags(' | ', ', '); ?></span>
-			<?php if (!is_singular() || is_search()): ?>
-			<span class="comments-link"> | <?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rockharbor') . '</span>', __('<b>1</b> Reply', 'rockharbor'), __('<b>%</b> Replies', 'rockharbor')) ?></span>
-			<?php endif; ?>
-		</div>
-
 		<div class="entry-content">
 			<?php the_content(__('Read More', 'rockharbor')); ?>
 			<?php echo $theme->render('pagination_posts'); ?>
