@@ -1,5 +1,5 @@
 <?php
-global $theme, $wp_query, $frontpage;
+global $theme, $wp_query, $frontpage, $post;
 get_header();
 $meta = $theme->metaToData($post->ID);
 $isFrontpage = true;
@@ -7,6 +7,12 @@ if (!isset($frontpage) || empty($frontpage)) {
 	$isFrontpage = false;
 }
 ?>
+		<?php if (has_post_thumbnail($post->ID)): ?>
+		<div class="featured-image">
+			<?php echo get_the_post_thumbnail($post->ID, 'full'); ?>
+		</div>
+		<?php endif; ?>
+
 		<?php if (!$isFrontpage): ?>
 		<header id="content-title">
 			<h1><?php wp_title(false); ?></h1>
@@ -14,14 +20,6 @@ if (!isset($frontpage) || empty($frontpage)) {
 		<?php endif; ?>
 
 		<section id="content" role="main">
-
-			<?php if (is_single($post->ID) || is_front_page()): ?>
-				<?php if (has_post_thumbnail($post->ID)): ?>
-				<div class="entry-image">
-					<?php echo get_the_post_thumbnail($post->ID, 'full'); ?>
-				</div>
-				<?php endif; ?>
-			<?php endif; ?>
 
 			<?php if (have_posts()):
 

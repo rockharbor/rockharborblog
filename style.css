@@ -508,6 +508,10 @@ article {
 
 /*= Main content
 -----------------------------------------*/
+.featured-image {
+	margin-bottom: 20px;
+}
+
 .archive-page-link,
 .page-link {
 	margin: 10px 0;
@@ -800,6 +804,16 @@ article footer {
 	border-top: 1px solid #747474;
 
 	background: transparent;
+}
+
+.entry-image {
+	float: left;
+	margin: 0 10px 10px 0;
+}
+
+article:nth-of-type(even) .entry-image {
+	float: right;
+	margin: 0 0 10px 10px;
 }
 
 .entry-meta {

@@ -1,18 +1,6 @@
 <?php global $theme; ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php if (has_post_thumbnail()): ?>
-		<div class="entry-image">
-			<?php
-			$size = 'full';
-			if (!is_singular() || is_search()) {
-				$size = 'thumbnail';
-			}
-			the_post_thumbnail($size);
-			?>
-		</div>
-		<?php endif; ?>
-
 		<?php if (!is_singular() || is_search()): ?>
 		<h2>
 			<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink to %s', 'rockharbor'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>

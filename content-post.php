@@ -1,18 +1,6 @@
 <?php global $theme; ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<?php if (has_post_thumbnail()): ?>
-		<div class="entry-image">
-			<?php
-			$size = 'full';
-			if (!is_single() || is_search()) {
-				$size = 'thumbnail';
-			}
-			the_post_thumbnail($size);
-			?>
-		</div>
-		<?php endif; ?>
-
 		<?php if (!is_single() || is_search()): ?>
 		<h2>
 			<a href="<?php the_permalink(); ?>" title="<?php printf(esc_attr__('Permalink to %s', 'rockharbor'), the_title_attribute('echo=0')); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -31,6 +19,14 @@
 			<span class="comments-link"><?php comments_popup_link('<span class="leave-reply">' . __('Leave a reply', 'rockharbor') . '</span>', __('<b>1</b> Reply', 'rockharbor'), __('<b>%</b> Replies', 'rockharbor')) ?></span>
 			<?php endif; ?>
 		</div>
+
+		<?php if (has_post_thumbnail() && (!is_single() || is_search())): ?>
+		<div class="entry-image">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail('thumbnail'); ?>
+			</a>
+		</div>
+		<?php endif; ?>
 
 		<div class="entry-content">
 			<?php the_content(__('Read More', 'rockharbor')); ?>
