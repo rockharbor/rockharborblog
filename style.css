@@ -35,8 +35,7 @@ body {
 	text-align: center;
 }
 
-#page,
-#footer {
+#page {
 	max-width: 800px;
 	width: 90%;
 	display: inline-block;
@@ -504,6 +503,24 @@ article {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
 	border-bottom: 1px solid #747474;
+}
+
+footer {
+	max-width: 800px;
+	margin: 0 auto;
+	margin: 20px 0;
+	padding: 10px;
+	display: block;
+
+	color: #383838;
+	text-align: center;
+
+	background: #ccc;
+}
+
+footer a {
+	color: #383838;
+	text-decoration: underline;
 }
 
 /*= Main content
