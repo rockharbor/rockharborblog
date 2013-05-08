@@ -48,6 +48,12 @@ aside header h1 {
 	text-align: left;
 }
 
+aside {
+	float: none;
+	margin: 0;
+	margin-bottom: 10px;
+}
+
 .page-title time,
 #content-title time,
 section header time {
@@ -59,24 +65,24 @@ section article:last-of-type {
 	border-bottom: 1px solid #747474;
 }
 
-#submenu {
+.submenu {
 	display: block;
 
 	width: 100%;
 	background: #383838;
 }
 
-#submenu ul {
+.submenu ul {
 	padding: 10px 20px;
 	/* reverts columns to use element definition */
 	width: auto !important;
 }
 
-#submenu li {
+.submenu li {
 	margin-bottom: 10px;
 }
 
-#submenu a {
+.submenu a {
 	color: #ffffff;
 	text-decoration: none;
 }

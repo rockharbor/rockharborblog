@@ -446,7 +446,7 @@ th {
 	width: 25%;
 }
 
-#submenu {
+.submenu {
 	display: none;
 }
 
@@ -455,8 +455,10 @@ th {
 section header h1,
 aside header h1 {
 	display: block;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 
-	border: none;
+	border-bottom: 1px solid #747474;
 
 	font-size: 2.4em; /*= 24px */
 	color: #383838;
@@ -508,7 +510,7 @@ article {
 footer {
 	max-width: 800px;
 	margin: 0 auto;
-	margin: 20px 0;
+	margin-bottom: 20px;
 	padding: 10px;
 	display: block;
 
@@ -624,7 +626,7 @@ a.prev {
 	margin-bottom: 10px;
 	overflow: hidden;
 
-	background: #ff0000;
+	background: #747474;
 	background-position: 50% 50%;
 
 	text-decoration: none;
@@ -809,6 +811,7 @@ time .day {
 article h2 a {
 	color: #383838;
 	text-decoration: none;
+	font-size: 2em;
 }
 
 h2 time span {
