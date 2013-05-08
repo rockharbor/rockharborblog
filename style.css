@@ -579,6 +579,21 @@ a.prev {
 	display: inline-block;
 }
 
+.more-link {
+	display: block;
+	padding-right: 20px;
+	margin-top: 10px;
+
+	font-family: 'TradeGothicLTStdBdCnNo.20', Lucida, Helvetica, Arial, sans-serif;
+	text-align: right;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #383838;
+	font-size: 1.3em; /*= 13px */
+
+	background: url('css/images/arrow-right.png') no-repeat 100% 0;
+}
+
 /*= Story box
 -----------------------------------------*/
 .story-box {
