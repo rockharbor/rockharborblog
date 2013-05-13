@@ -81,15 +81,44 @@ section header {
 	background-position: -19px -60px;
 }
 
-.main-navigation .access>ul>li:hover:after {
-	display: none;
-}
-
-.main-navigation .access ul li {
+.main-navigation .access {
+	position: relative;
+	display: block;
 	float: none;
 }
 
+.main-navigation .access .dropdown span {
+	display: none;
+}
+
+.main-navigation .access .dropdown .submenu {
+	position: relative;
+	display: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+
+	background: #383838;
+	box-shadow: none;
+}
+
+.main-navigation .access .dropdown:hover:after {
+	border: none;
+}
+
+.main-navigation .access .dropdown .submenu li {
+	margin: 0;
+}
+
 .main-navigation .access ul li a {
+	display: block;
+	padding: 5px 15px 4px;
+
+	color: #fff;
+	font-size: 2.6em; /*= 26px */
+	font-family: 'TradeGothicLTStdBdCnNo.20', Lucida, Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	text-decoration: none;
 	text-align: left;
 }
 

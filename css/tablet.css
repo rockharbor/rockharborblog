@@ -87,14 +87,8 @@ section article:last-of-type {
 	text-decoration: none;
 }
 
-/*= Main navigation
------------------------------------------*/
-.main-navigation .access {
-	display: block;
-}
-
-.main-navigation .access ul li:hover div.submenu {
-	display: none;
+.main-navigation .submenu li {
+	margin: 0;
 }
 
 /*= CORE

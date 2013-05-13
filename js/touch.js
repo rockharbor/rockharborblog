@@ -40,7 +40,7 @@ RH.mobileEnter = function() {
 	});
 	// menu toggle
 	jQuery('.main-navigation .mobile-menu .menu').on('click', function() {
-		jQuery('.main-navigation .access').slideToggle();
+		jQuery('.main-navigation .access .submenu').slideToggle();
 	});
 }
 
@@ -53,4 +53,5 @@ RH.mobileExit = function() {
 	}
 	RH.inMobile = false;
 	jQuery('.main-navigation .mobile-menu .menu').off('click');
+	jQuery('.main-navigation .access .submenu').css('display', '');
 }
