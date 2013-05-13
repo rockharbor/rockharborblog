@@ -3,7 +3,11 @@
 class BlogTheme extends RockharborThemeBase {
 
 	public function registerSidebars() {
-		unregister_sidebar('sidebar-nav');
+		parent::registerSidebars();
+
+		unregister_sidebar('sidebar-subnav');
+		unregister_sidebar('sidebar-frontpage');
+
 		register_sidebar(array(
 			'name' => __('Front Page Widgets', 'rockharbor'),
 			'id' => 'sidebar-frontpage',
