@@ -110,7 +110,9 @@
 				}
 				$title = $theme->Html->tag('span', 'Pages');
 				$dropdown = $theme->Html->tag('div', $title.$theme->Html->tag('ul', $output, array('class' => 'submenu clearfix')), array('class' => 'dropdown'));
-				echo $dropdown;
+				if (!empty($menu)) {
+					echo $dropdown;
+				}
 				?>
 			</nav>
 
