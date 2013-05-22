@@ -28,7 +28,7 @@ class BlogTheme extends RockharborThemeBase {
 		));
 	}
 
-	public function after() {
+	protected function after() {
 		parent::after();
 		unregister_nav_menu('footer');
 		unregister_nav_menu('featured');
