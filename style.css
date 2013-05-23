@@ -478,11 +478,6 @@ aside {
 	background: #ffffff;
 }
 
-aside .widget-body {
-	padding: 10px;
-	padding-top: 0;
-}
-
 article {
 	padding-bottom: 20px;
 	margin-bottom: 20px;
@@ -971,7 +966,16 @@ input[type="search"]::-webkit-search-cancel-button {
 .core-events time {
 	width: 100%;
 	margin: 10px 0;
+	padding: 0;
 	float: none;
+
+	border: none;
+}
+
+.core-events time span {
+	display: inline;
+
+	font-size: 1.3em;
 }
 
 .core-events time:first-of-type {
