@@ -1,7 +1,7 @@
 <?php global $theme; ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<div class="entry-content">
+		<div class="entry-content clearfix">
 			<?php the_content(__('Read More', 'rockharbor')); ?>
 			<?php echo $theme->render('pagination_posts'); ?>
 		</div>
