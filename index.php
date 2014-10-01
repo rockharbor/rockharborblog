@@ -6,6 +6,7 @@ $isFrontpage = true;
 if (!isset($frontpage) || empty($frontpage)) {
 	$isFrontpage = false;
 }
+$fullpage = !empty($meta['hide_widgets']) && !empty($meta['hide_submenu']);
 ?>
 		<?php if (has_post_thumbnail($post->ID)): ?>
 		<div class="featured-image">
@@ -19,7 +20,7 @@ if (!isset($frontpage) || empty($frontpage)) {
 		</header>
 		<?php endif; ?>
 
-		<section id="content" role="main">
+		<section id="content" role="main" <?php if ($fullpage) { echo 'class="full"'; } ?>>
 
 			<?php if (have_posts()):
 
