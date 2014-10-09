@@ -35,6 +35,8 @@ class BlogTheme extends RockharborThemeBase {
 	}
 
 	public function setupAssets() {
+		add_filter('embed_oembed_html', array($this, 'responsiveVideo'), 10, 4);
+
 		// register assets
 		$base = $this->info('base_url');
 		wp_deregister_script('jquery'); // deregister WP's version
@@ -54,6 +56,8 @@ class BlogTheme extends RockharborThemeBase {
 		wp_register_style('mobile', "$base/css/mobile.css");
 		wp_register_style('tablet', "$base/css/tablet.css");
 		wp_register_style('base', "$base/style.css");
+		wp_register_script('fitVids', "$base/js/jquery.fitvids.js");
+		wp_register_script('blog', "$base/js/blog.js");
 		wp_register_script('touch', "$base/js/touch.js");
 
 		// queue them
@@ -71,6 +75,8 @@ class BlogTheme extends RockharborThemeBase {
 		wp_enqueue_script('mediaCheck');
 		wp_enqueue_script('initScripts');
 		wp_enqueue_script('fastclick');
+		wp_enqueue_script('fitVids');
+		wp_enqueue_script('blog');
 		wp_enqueue_script('touch');
 
 		// dequeue stuff we don't need
@@ -81,6 +87,11 @@ class BlogTheme extends RockharborThemeBase {
 		if (is_singular() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
 		}
+	}
+
+	public function responsiveVideo($html, $url, $attr, $post_ID) {
+		$return = '<div class="video-container">'.$html.'</div>';
+		return $return;
 	}
 
 }
