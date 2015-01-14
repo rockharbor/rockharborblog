@@ -44,7 +44,6 @@ class BlogTheme extends RockharborThemeBase {
 		wp_register_script('lightbox', "$base/js/jquery.lightbox.min.js");
 		wp_register_script('media', "$base/js/mediaelement-and-player.min.js");
 		wp_register_script('mediaCheck', "$base/js/mediaCheck.min.js");
-		wp_register_script('initScripts', "$base/js/scripts.js");
 		wp_register_script('fastclick', "$base/js/fastclick.js");
 		wp_register_style('reset', "$base/css/reset.css");
 		wp_register_style('fonts', "$base/css/fonts.css");
@@ -56,6 +55,7 @@ class BlogTheme extends RockharborThemeBase {
 		wp_register_style('mobile', "$base/css/mobile.css");
 		wp_register_style('tablet', "$base/css/tablet.css");
 		wp_register_style('base', "$base/style.css");
+		wp_register_script('initScripts', "$base/js/scripts.js");
 		wp_register_script('fitVids', "$base/js/jquery.fitvids.js");
 		wp_register_script('blog', "$base/js/blog.js");
 		wp_register_script('touch', "$base/js/touch.js");
