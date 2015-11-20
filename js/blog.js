@@ -1,3 +1,3 @@
-$(window).load(function(){
-	$(".video-container").fitVids();
+jQuery(window).load(function(){
+	jQuery(".video-container").fitVids();
 });
